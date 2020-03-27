@@ -1,6 +1,6 @@
 # USNWC-cf
 
-API endpoint to check the status of the [USNWC](https://usnwc.org/) trail system use Google Cloud Functions.
+API endpoint to check the status of the [USNWC](https://usnwc.org/) trail system using Google Cloud Functions.
 
 [Check the status ↗][1]
 
