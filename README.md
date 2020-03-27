@@ -7,4 +7,4 @@ API endpoint to check the status of the [USNWC](https://usnwc.org/) trail system
 [Siri Shortcut ↗][2]
 
 [1]: http://usnwc.atwalsh.me
-[2]: https://www.icloud.com/shortcuts/058f034c4c1646abbf328cfe69ead1ee
+[2]: https://www.icloud.com/shortcuts/cb6ec0ef4c1c465ea6474049ad7f5ad8
