@@ -16,4 +16,4 @@ A group of GCP Cloud Functions that provide an "API endpoint" for the status of 
 [Siri Shortcut ↗][2]
 
 [1]: http://usnwc.atwalsh.me
-[2]: https://www.icloud.com/shortcuts/cb6ec0ef4c1c465ea6474049ad7f5ad8
+[2]: https://www.icloud.com/shortcuts/75df2680587f446e9cbfb54cce4e8c4d
