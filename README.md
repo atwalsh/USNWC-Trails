@@ -1,6 +1,15 @@
-# USNWC-cf
+## USNWC-Trails
 
-API endpoint to check the status of the [USNWC](https://usnwc.org/) trail system using Google Cloud Functions.
+A group of GCP Cloud Functions that provide an "API endpoint" for the status of the USNWC trail system. There's also a web page showing the current status at [usnwc.atwalsh.me][1].
+
+---
+
+#### Directories
+
+- `/update-status`: Check the status of the USNWC trail system and store the current in a GCP Datastore
+- `/get-status`: Get the current status from the Datastore
+
+---
 
 [Check the status ↗][1]
 

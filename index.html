@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="USNWC trail status.">
+    <title>USNWC Trails</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <section class="hero is-dark is-fullheight" id="heroSection">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title" id="status">
+                    Checking Status...
+                </h1>
+
+                <h2 class="subtitle" id="since"><i class="far fa-spinner-third fa-spin"></i>
+                    Fetching the latest trail status.</h2>
+            </div>
+        </div>
+        <section>
+            <div class="hero-body">
+                <div class="container">
+                    <a class="has-text-light" href="https://github.com/atwalsh/usnwc-trails">
+                        GitHub ↗
+                    </a>
+                </div>
+            </div>
+
+        </section>
+    </section>
+    <script>
+        const status = document.querySelector('#status');
+        const section = document.querySelector('#since');
+        const heroSection = document.querySelector('#heroSection');
+        let requestURL = 'https://us-central1-usnwc-trails.cloudfunctions.net/get-status';
+        let request = new XMLHttpRequest();
+        request.open('GET', requestURL);
+        request.responseType = 'json';
+        request.send();
+        request.onload = function () {
+            const statusData = request.response;
+            populateBody(statusData);
+        }
+        function populateBody(jsonObj) {
+            let currentStatus = jsonObj['status'];
+            if (currentStatus == 'open') {
+                heroSection.className = 'hero is-success is-fullheight';
+                status.innerHTML = 'Trails Open'
+            } else {
+                status.innerHTML = 'Trails Closed';
+                heroSection.className = 'hero is-danger is-fullheight';
+            }
+            since.innerHTML = `Since ${new Date(Date.parse(jsonObj['since'])).toLocaleString()}`;
+
+        }
+    </script>
+</body>
+
+</html>
