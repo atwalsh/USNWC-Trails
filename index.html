@@ -33,6 +33,7 @@
 
         </section>
     </section>
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
     <script>
         const status = document.querySelector('#status');
         const section = document.querySelector('#since');
@@ -48,6 +49,7 @@
         }
         function populateBody(jsonObj) {
             let currentStatus = jsonObj['status'];
+            let currentStatusDate = jsonObj['since'];
             if (currentStatus == 'open') {
                 heroSection.className = 'hero is-success is-fullheight';
                 status.innerHTML = 'Trails Open'
@@ -55,7 +57,7 @@
                 status.innerHTML = 'Trails Closed';
                 heroSection.className = 'hero is-danger is-fullheight';
             }
-            since.innerHTML = `Since ${new Date(Date.parse(jsonObj['since'])).toLocaleString()}`;
+            since.innerHTML = `Since ${moment(currentStatusDate).format('MMMM Do YYYY, h:mm:ss A')}`;
 
         }
     </script>
