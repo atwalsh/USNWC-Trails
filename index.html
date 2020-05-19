@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="USNWC trail status.">
     <title>USNWC Trails</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment"></script>
 </head>
 
 <body>
@@ -17,48 +18,76 @@
                 <h1 class="title" id="status">
                     Checking Status...
                 </h1>
-
-                <h2 class="subtitle" id="since"><i class="far fa-spinner-third fa-spin"></i>
-                    Fetching the latest trail status.</h2>
+                <h2 class="subtitle" id="since">
+                    Fetching the latest trail status.
+                </h2>
             </div>
         </div>
-        <section>
+        <section id="githubSection">
             <div class="hero-body">
                 <div class="container">
-                    <a class="has-text-light" href="https://github.com/atwalsh/usnwc-trails">
-                        GitHub ↗
+                    <a class="has-text-light is-size-7" href="https://github.com/atwalsh/usnwc-trails">
+                        Source code ↗
                     </a>
+                    <div class="is-size-7">A project by Adam Walsh</div>
                 </div>
             </div>
 
         </section>
     </section>
-    <script src="https://momentjs.com/downloads/moment.min.js"></script>
     <script>
+        const OPEN = 'open';
+        const CLOSED = 'closed';
+        const cookieName = 'usnwc-trails';
+        const cookieStatus = 'usnwc-satus';
+        const cookieSince = 'usnwc-status-since';
+        const requestURL = 'https://us-central1-usnwc-trails.cloudfunctions.net/get-status';
+
+        // Document elements
         const status = document.querySelector('#status');
         const section = document.querySelector('#since');
         const heroSection = document.querySelector('#heroSection');
-        let requestURL = 'https://us-central1-usnwc-trails.cloudfunctions.net/get-status';
+
+        // Get cached status
+        let cachedStatus = Cookies.get(cookieName);
+
+        // Processed a cached status
+        if (cachedStatus) {
+            console.log(`Using cached status: ${cachedStatus}`);
+            try {
+                let statusObj = JSON.parse(cachedStatus);
+                populateBody(statusObj.status, statusObj.since, true)
+            } catch (error) {
+                console.log('Error using cached status.');
+            }
+        }
+        // Get the current status from API
         let request = new XMLHttpRequest();
         request.open('GET', requestURL);
         request.responseType = 'json';
         request.send();
         request.onload = function () {
-            const statusData = request.response;
-            populateBody(statusData);
+            updateCookieStatus(request.response);
         }
-        function populateBody(jsonObj) {
-            let currentStatus = jsonObj['status'];
-            let currentStatusDate = jsonObj['since'];
-            if (currentStatus == 'open') {
+
+        // Update cached status
+        function updateCookieStatus(jsonObj) {
+            console.log(`Updating status cache with ${JSON.stringify(jsonObj)}`);
+            Cookies.remove(cookieName);
+            Cookies.set(cookieName, JSON.stringify(jsonObj));
+            populateBody(jsonObj['status'], jsonObj['since']);
+        }
+
+        // Update document
+        function populateBody(status_, since_, cached) {
+            if (status_ == OPEN) {
                 heroSection.className = 'hero is-success is-fullheight';
-                status.innerHTML = 'Trails Open'
+                status.innerHTML = `Trails Open ${cached ? '<i class="is-size-7">Cached</i>' : ''}`;
             } else {
-                status.innerHTML = 'Trails Closed';
+                status.innerHTML = `Trails Closed ${cached ? '<i class="is-size-7">Cached</i>' : ''}`;
                 heroSection.className = 'hero is-danger is-fullheight';
             }
-            since.innerHTML = `Since ${moment(currentStatusDate).format('MMMM Do YYYY, h:mm:ss A')}`;
-
+            since.innerHTML = `Since ${moment(since_).format('MMMM Do YYYY, h:mm:ss A')}`;
         }
     </script>
 </body>
