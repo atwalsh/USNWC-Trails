@@ -1,6 +1,7 @@
 import json
-from flask import jsonify, Response
+from flask import Response
 from google.cloud import datastore
+import pendulum
 
 OPEN = True
 CLOSED = False
@@ -18,8 +19,9 @@ def run(request):
         }
 
         return Response('', status=204, headers=headers)
-    
-    headers = {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'}
+
+    headers = {'Access-Control-Allow-Origin': '*',
+               'Content-Type': 'application/json'}
     # Set up datastore
     datastore_client = datastore.Client()
     datastore_kind = 'Status'
@@ -32,10 +34,13 @@ def run(request):
         return _500()
     most_recent_status = result[0]['status']
     most_recent_status_created = result[0]['created']
-    if most_recent_status == OPEN:
-        return json.dumps({'status': 'open', 'since': str(most_recent_status_created)}), 200, headers
-    else:
-        return json.dumps({'status': 'closed', 'since': str(most_recent_status_created)}), 200, headers
+    _status = 'open' if most_recent_status == OPEN else 'closed'
+    _since = pendulum.parse(most_recent_status_created).to_iso8601_string()
+    return Response(
+        json.dumps({'status': _status, 'since': _since}),
+        status=200,
+        headers=headers
+    )
 
 
 def _500():
