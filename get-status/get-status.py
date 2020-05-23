@@ -35,7 +35,7 @@ def run(request):
     most_recent_status = result[0]['status']
     most_recent_status_created = result[0]['created']
     _status = 'open' if most_recent_status == OPEN else 'closed'
-    _since = pendulum.parse(most_recent_status_created).to_iso8601_string()
+    _since = pendulum.parse(str(most_recent_status_created)).to_iso8601_string()
     return Response(
         json.dumps({'status': _status, 'since': _since}),
         status=200,
