@@ -82,9 +82,9 @@
         function populateBody(status_, since_, cached) {
             if (status_ == OPEN) {
                 heroSection.className = 'hero is-success is-fullheight';
-                status.innerHTML = `Trails Open ${cached ? '<i class="is-size-7">Cached</i>' : ''}`;
+                status.innerHTML = `Trails Open ${cached ? '<i class="is-size-7">Updating...</i>' : ''}`;
             } else {
-                status.innerHTML = `Trails Closed ${cached ? '<i class="is-size-7">Cached</i>' : ''}`;
+                status.innerHTML = `Trails Closed ${cached ? '<i class="is-size-7">Updating...</i>' : ''}`;
                 heroSection.className = 'hero is-danger is-fullheight';
             }
             since.innerHTML = `Since ${moment(since_).format('MMMM Do YYYY, h:mm A')}`;
