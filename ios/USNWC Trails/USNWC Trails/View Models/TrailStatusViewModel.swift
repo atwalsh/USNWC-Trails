@@ -26,7 +26,8 @@ final class TrailStatusViewModel: ObservableObject {
         }
     }
     
-    private func getStatus() {
+    func getStatus() {
+        self.status = ""
         Webservice().getStatus {
             self.status = $0.status
             self.since = $0.since
