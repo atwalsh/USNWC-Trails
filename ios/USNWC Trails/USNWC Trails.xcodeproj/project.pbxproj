@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4036272F61978C15D68DF641 /* Pods_USNWC_Trails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C0228DE027338D911F4C02 /* Pods_USNWC_Trails.framework */; };
 		662B06C02479935200CD20B5 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 662B06BF2479935200CD20B5 /* SwiftDate */; };
 		662B06C6247AEFAB00CD20B5 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 662B06C5247AEFAB00CD20B5 /* SwiftyJSON */; };
 		662B06CE247AFC7800CD20B5 /* SwiftHEXColors in Frameworks */ = {isa = PBXBuildFile; productRef = 662B06CD247AFC7800CD20B5 /* SwiftHEXColors */; };
 		662B06D0247B00DB00CD20B5 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662B06CF247B00DB00CD20B5 /* HostingController.swift */; };
+		66AA1856248D64C800A2C1AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66AA1855248D64C800A2C1AB /* GoogleService-Info.plist */; };
 		66B42520247983310009BF17 /* TrailStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B4251F247983310009BF17 /* TrailStatus.swift */; };
 		66B42522247983D70009BF17 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B42521247983D70009BF17 /* Webservice.swift */; };
 		66B425252479864F0009BF17 /* TrailStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B425242479864F0009BF17 /* TrailStatusViewModel.swift */; };
@@ -23,7 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15C0228DE027338D911F4C02 /* Pods_USNWC_Trails.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_USNWC_Trails.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66038FEA248D68B100849E5C /* USNWC Trails.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "USNWC Trails.entitlements"; sourceTree = "<group>"; };
 		662B06CF247B00DB00CD20B5 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		66AA1855248D64C800A2C1AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		66B4251F247983310009BF17 /* TrailStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailStatus.swift; sourceTree = "<group>"; };
 		66B42521247983D70009BF17 /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 		66B425242479864F0009BF17 /* TrailStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailStatusViewModel.swift; sourceTree = "<group>"; };
@@ -35,6 +40,8 @@
 		66D56A232474B473006E8796 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		66D56A262474B473006E8796 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		66D56A282474B473006E8796 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		754ECB04F34D2B894B5A8656 /* Pods-USNWC Trails.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-USNWC Trails.release.xcconfig"; path = "Target Support Files/Pods-USNWC Trails/Pods-USNWC Trails.release.xcconfig"; sourceTree = "<group>"; };
+		AF7C76734B8360878B4900C1 /* Pods-USNWC Trails.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-USNWC Trails.debug.xcconfig"; path = "Target Support Files/Pods-USNWC Trails/Pods-USNWC Trails.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +52,7 @@
 				662B06CE247AFC7800CD20B5 /* SwiftHEXColors in Frameworks */,
 				662B06C6247AEFAB00CD20B5 /* SwiftyJSON in Frameworks */,
 				662B06C02479935200CD20B5 /* SwiftDate in Frameworks */,
+				4036272F61978C15D68DF641 /* Pods_USNWC_Trails.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +88,8 @@
 			children = (
 				66D56A192474B473006E8796 /* USNWC Trails */,
 				66D56A182474B473006E8796 /* Products */,
+				AC325E9A45C451224E980599 /* Pods */,
+				8F716F4B855F19CEF4F32916 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +104,7 @@
 		66D56A192474B473006E8796 /* USNWC Trails */ = {
 			isa = PBXGroup;
 			children = (
+				66038FEA248D68B100849E5C /* USNWC Trails.entitlements */,
 				66B425232479863D0009BF17 /* View Models */,
 				66B4251E247983210009BF17 /* Models */,
 				66B4251D2479831C0009BF17 /* Services */,
@@ -102,6 +113,7 @@
 				66D56A1E2474B473006E8796 /* ContentView.swift */,
 				66D56A202474B473006E8796 /* Assets.xcassets */,
 				66D56A252474B473006E8796 /* LaunchScreen.storyboard */,
+				66AA1855248D64C800A2C1AB /* GoogleService-Info.plist */,
 				66D56A282474B473006E8796 /* Info.plist */,
 				66D56A222474B473006E8796 /* Preview Content */,
 				662B06CF247B00DB00CD20B5 /* HostingController.swift */,
@@ -117,6 +129,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		8F716F4B855F19CEF4F32916 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				15C0228DE027338D911F4C02 /* Pods_USNWC_Trails.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AC325E9A45C451224E980599 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF7C76734B8360878B4900C1 /* Pods-USNWC Trails.debug.xcconfig */,
+				754ECB04F34D2B894B5A8656 /* Pods-USNWC Trails.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -124,9 +153,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 66D56A2B2474B473006E8796 /* Build configuration list for PBXNativeTarget "USNWC Trails" */;
 			buildPhases = (
+				278B2732611EF440D0E6472F /* [CP] Check Pods Manifest.lock */,
 				66D56A132474B473006E8796 /* Sources */,
 				66D56A142474B473006E8796 /* Frameworks */,
 				66D56A152474B473006E8796 /* Resources */,
+				0602A97FBD76BE1801D212FB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -186,12 +217,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				66D56A272474B473006E8796 /* LaunchScreen.storyboard in Resources */,
+				66AA1856248D64C800A2C1AB /* GoogleService-Info.plist in Resources */,
 				66D56A242474B473006E8796 /* Preview Assets.xcassets in Resources */,
 				66D56A212474B473006E8796 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0602A97FBD76BE1801D212FB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-USNWC Trails/Pods-USNWC Trails-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-USNWC Trails/Pods-USNWC Trails-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-USNWC Trails/Pods-USNWC Trails-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		278B2732611EF440D0E6472F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-USNWC Trails-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		66D56A132474B473006E8796 /* Sources */ = {
@@ -338,8 +412,10 @@
 		};
 		66D56A2C2474B473006E8796 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF7C76734B8360878B4900C1 /* Pods-USNWC Trails.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "USNWC Trails/USNWC Trails.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"USNWC Trails/Preview Content\"";
@@ -359,8 +435,10 @@
 		};
 		66D56A2D2474B473006E8796 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 754ECB04F34D2B894B5A8656 /* Pods-USNWC Trails.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "USNWC Trails/USNWC Trails.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"USNWC Trails/Preview Content\"";

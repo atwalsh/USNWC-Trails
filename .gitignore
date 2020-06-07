@@ -253,3 +253,5 @@ iOSInjectionProject/
 *.xccheckout
 *.moved-aside
 *.xcuserstate
+GoogleService-Info.plist
+ios/USNWC Trails/Pods
