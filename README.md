@@ -9,6 +9,7 @@ A group of GCP Cloud Functions that provide an "API endpoint" for the status of 
 - `/update-status`: GCP function for checking the status of the USNWC trail system and storing the current in a GCP Datastore
 - `/get-status`: GCP function for fetching current status from the Datastore
 - `/ios`: WIP iOS app 
+- `/docs`: Source for [usnwc.app][1]
 
 ---
 
