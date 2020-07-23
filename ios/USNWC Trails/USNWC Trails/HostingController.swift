@@ -9,8 +9,8 @@
 import Foundation
 import SwiftUI
 
-class HostingController: UIHostingController<ContentView> {
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+class HostingController<ContentView> : UIHostingController<ContentView> where ContentView : View {
+    override dynamic open var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
     }
 }
