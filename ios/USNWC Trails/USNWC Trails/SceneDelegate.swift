@@ -9,6 +9,10 @@
 import UIKit
 import SwiftUI
 
+class UserSettings: ObservableObject {
+    @Published var score = 0
+}
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -25,7 +29,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = HostingController(rootView: contentView)
+            window.rootViewController = HostingController(rootView: contentView.environmentObject(TrailStatusViewModel()))
+
+
             self.window = window
             window.makeKeyAndVisible()
         }
