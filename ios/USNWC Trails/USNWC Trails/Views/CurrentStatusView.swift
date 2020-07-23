@@ -93,7 +93,7 @@ struct CurrentStatusView: View {
                     }.sheet(isPresented: $showingModal) {
                         DetailView()
                     }
-                    .padding(.trailing, 20.0)
+                    .padding()
                 }
             }
         }
