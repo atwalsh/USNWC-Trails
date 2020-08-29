@@ -10,8 +10,8 @@ from google.cloud import datastore
 
 usnwc_url = 'https://usnwc.org/'
 status_element_id = 'trail-status'
-trails_closed_img = 'Trails-Closed.png'
-trails_open_img = 'Trails_Open.png'
+trails_closed_text = 'Trails Closed'
+trails_open_text = 'Trails Open'
 OPEN = True
 CLOSED = False
 
@@ -39,15 +39,15 @@ def run(request):
     # Parse site
     site = BeautifulSoup(r.text, 'html.parser')
     try:
-        status_img = site.find(
-            id=status_element_id).img.attrs['src'].split('/')[-1]
+        web_status = site.select(
+            '#trail-status > div > div.trails > span > a')[0].text
     except AttributeError:
         return _500()
 
     # Get the current status
-    if status_img == trails_closed_img:
+    if web_status == trails_closed_text:
         current_status = CLOSED
-    elif status_img == trails_open_img:
+    elif web_status == trails_open_text:
         current_status = OPEN
     else:
         return _500()
