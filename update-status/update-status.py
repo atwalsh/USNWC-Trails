@@ -8,8 +8,8 @@ from flask import jsonify, Response
 from datetime import datetime
 from google.cloud import datastore
 
-usnwc_url = 'https://usnwc.org/'
-status_element_id = 'trail-status'
+usnwc_url = 'https://whitewater.org/'
+selector = '#page > div.topbar > div > div > span.trail-status.el.active > span.t'
 trails_closed_text = 'Trails Closed'
 trails_open_text = 'Trails Open'
 OPEN = True
@@ -39,8 +39,7 @@ def run(request):
     # Parse site
     site = BeautifulSoup(r.text, 'html.parser')
     try:
-        web_status = site.select(
-            '#trail-status > div > div.trails > span > a')[0].text
+        web_status = site.select(selector)[0].text
     except AttributeError:
         return _500()
 
